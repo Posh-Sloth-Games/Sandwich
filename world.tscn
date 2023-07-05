@@ -1,12 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://bj6en0rifvn3w"]
+[gd_scene load_steps=7 format=3 uid="uid://bj6en0rifvn3w"]
 
 [ext_resource type="PackedScene" uid="uid://7g122hkiaaa7" path="res://player.tscn" id="1_17os3"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kocjt"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_gosce"]
+sky_material = SubResource("ProceduralSkyMaterial_kocjt")
+
+[sub_resource type="Environment" id="Environment_scr7t"]
+background_mode = 2
+sky = SubResource("Sky_gosce")
+tonemap_mode = 2
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_0tcvl"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_mvbeh"]
 
 [node name="World" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_scr7t")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 
 [node name="Floor" type="StaticBody3D" parent="."]
 
