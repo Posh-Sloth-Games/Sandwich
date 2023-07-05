@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj6en0rifvn3w"]
+
+[ext_resource type="PackedScene" uid="uid://7g122hkiaaa7" path="res://player.tscn" id="1_17os3"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_0tcvl"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mvbeh"]
+
+[node name="World" type="Node3D"]
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("WorldBoundaryShape3D_0tcvl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_mvbeh")
+skeleton = NodePath("../..")
+
+[node name="Player" parent="." instance=ExtResource("1_17os3")]
