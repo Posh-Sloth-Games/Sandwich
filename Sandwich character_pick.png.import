@@ -2,17 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5x2pmkhchnvs"
-path.s3tc="res://.godot/imported/pick.png-2784f29be0f6bc49fda12744fc087fe8.s3tc.ctex"
+uid="uid://dxdapwln1wsuk"
+path.s3tc="res://.godot/imported/Sandwich character_pick.png-08f900bc591847dee700a63b3ea56f15.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={}
 
 [deps]
 
-source_file="res://pick.png"
-dest_files=["res://.godot/imported/pick.png-2784f29be0f6bc49fda12744fc087fe8.s3tc.ctex"]
+source_file="res://Sandwich character_pick.png"
+dest_files=["res://.godot/imported/Sandwich character_pick.png-08f900bc591847dee700a63b3ea56f15.s3tc.ctex"]
 
 [params]
 
