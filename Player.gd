@@ -16,7 +16,7 @@ var _snap_vector := Vector3.DOWN
 var camera_offset := Vector3(0, 2.5, 0)
 
 @onready var _spring_arm: SpringArm3D = $SpringArm
-@onready var _model: Node3D = $Model
+@onready var _model: Node3D = $ModelPivot/Model
 
 func _physics_process(delta):
 	## GDQuest Code ##
