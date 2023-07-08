@@ -17,7 +17,7 @@ var camera_offset := Vector3(0, 2.5, 0)
 
 @onready var _spring_arm: SpringArm3D = $SpringArm
 @onready var _model: Node3D = $ModelPivot/Model
-
+@onready var animation= $ModelPivot/Model/AnimationPlayer
 func _physics_process(delta):
 	## GDQuest Code ##
 	var move_direction := Vector3.ZERO
@@ -34,6 +34,7 @@ func _physics_process(delta):
 	if is_jumping:
 		velocity.y = jump_strength
 		_snap_vector = Vector3.ZERO
+		animation.play ("Jump")
 	elif just_landed:
 		_snap_vector = Vector3.DOWN
 	
