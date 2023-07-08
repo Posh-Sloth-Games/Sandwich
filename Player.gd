@@ -16,7 +16,7 @@ var _snap_vector := Vector3.DOWN
 var camera_offset := Vector3(0, 2.5, 0)
 
 @onready var _spring_arm: SpringArm3D = $SpringArm
-@onready var _model: Node3D = $MeshInstance3D
+@onready var _model: Node3D = $Model
 
 func _physics_process(delta):
 	## GDQuest Code ##
@@ -41,10 +41,8 @@ func _physics_process(delta):
 	
 	if velocity.length() > 0.2:
 		var look_direction = Vector2(velocity.z, velocity.x)
-		_model.rotation_degrees.y = look_direction.angle()
+		_model.rotation.y = look_direction.angle()
 	
 
-## GDQuest Process ##
 func _process(_delta):
 	_spring_arm.position = position + camera_offset
-## End Region ##

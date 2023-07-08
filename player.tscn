@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://7g122hkiaaa7"]
+[gd_scene load_steps=9 format=3 uid="uid://7g122hkiaaa7"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_60bob"]
 [ext_resource type="Script" path="res://SpringArm.gd" id="2_1ebmi"]
@@ -10,21 +10,38 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jm6hv"]
 albedo_color = Color(1, 0, 0, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_il6mv"]
+transparency = 1
+albedo_color = Color(0, 1, 1, 0.352941)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wx347"]
+material = SubResource("StandardMaterial3D_il6mv")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_45mko"]
+
 [node name="Player" type="CharacterBody3D"]
+collision_layer = 2
 script = ExtResource("1_60bob")
-speed = null
-jump_strength = null
-gravity = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_lkd0t")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Model" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_3oked")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_jm6hv")
+
+[node name="DebugMesh" type="MeshInstance3D" parent="Model"]
+visible = false
+mesh = SubResource("CylinderMesh_wx347")
+skeleton = NodePath("../..")
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="Model"]
+visible = false
+shape = SubResource("CylinderShape3D_45mko")
+target_position = Vector3(0, 0, 0)
 
 [node name="SpringArm" type="SpringArm3D" parent="."]
 spring_length = 7.0
