@@ -1,31 +1,50 @@
+#Attribution
+#	Tutorial:	GDQuest; 3D Movement in Godot in Only 6 Minutes - https://youtu.be/UpF7wm0186Q; 
+#				CC-By 4.0 - GDQuest and contributors - https://www.gdquest.com/
+#				Note: The tutorial is outdated as of 4.0 and needed modifications
+
 extends CharacterBody3D
 
+@export var speed := 7.0
+@export var jump_strength := 20.0
+@export var gravity := 50.0
+### THE LINE BELOW IS FROM THE TUTORIAL; MAY BE USEFUL TO REPLACE FOR GRAVITY LATER
+## Get the gravity from the project settings to be synced with RigidBody nodes.
+# var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+var _snap_vector := Vector3.DOWN
+var camera_offset := Vector3(0, 2.5, 0)
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-
+@onready var _spring_arm: SpringArm3D = $SpringArm
+@onready var _model: Node3D = $MeshInstance3D
 
 func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y -= gravity * delta
-
-	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
-
+	## GDQuest Code ##
+	var move_direction := Vector3.ZERO
+	move_direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
+	move_direction.z = Input.get_action_strength("back") - Input.get_action_strength("forward")
+	move_direction = move_direction.rotated(Vector3.UP, _spring_arm.rotation.y).normalized()
+	
+	velocity.x = move_direction.x * speed
+	velocity.z = move_direction.z * speed
+	velocity.y -= gravity * delta
+	
+	var just_landed := is_on_floor() and _snap_vector == Vector3.ZERO
+	var is_jumping := is_on_floor() and Input.is_action_just_pressed("jump")
+	if is_jumping:
+		velocity.y = jump_strength
+		_snap_vector = Vector3.ZERO
+	elif just_landed:
+		_snap_vector = Vector3.DOWN
+	
 	move_and_slide()
+	
+	if velocity.length() > 0.2:
+		var look_direction = Vector2(velocity.z, velocity.x)
+		_model.rotation_degrees.y = look_direction.angle()
+	
+
+## GDQuest Process ##
+func _process(_delta):
+	_spring_arm.position = position + camera_offset
+## End Region ##

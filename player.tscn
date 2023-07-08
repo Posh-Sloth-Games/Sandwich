@@ -1,25 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://7g122hkiaaa7"]
+[gd_scene load_steps=6 format=3 uid="uid://7g122hkiaaa7"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_60bob"]
+[ext_resource type="Script" path="res://SpringArm.gd" id="2_1ebmi"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_j0rj1"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lkd0t"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_j7k8i"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3oked"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jm6hv"]
 albedo_color = Color(1, 0, 0, 1)
 
 [node name="Player" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 script = ExtResource("1_60bob")
+speed = null
+jump_strength = null
+gravity = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_j0rj1")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_lkd0t")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_j7k8i")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_3oked")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_jm6hv")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 2, 2.5)
+[node name="SpringArm" type="SpringArm3D" parent="."]
+spring_length = 7.0
+margin = 1.0
+script = ExtResource("2_1ebmi")
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm"]
