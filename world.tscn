@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bj6en0rifvn3w"]
+[gd_scene load_steps=9 format=3 uid="uid://bj6en0rifvn3w"]
 
 [ext_resource type="PackedScene" uid="uid://7g122hkiaaa7" path="res://player.tscn" id="1_17os3"]
 [ext_resource type="PackedScene" uid="uid://bkudgbxm6erfe" path="res://ragdoll.tscn" id="2_tdxuf"]
@@ -17,7 +17,10 @@ sky = SubResource("Sky_gosce")
 tonemap_mode = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l0ed6"]
-size = Vector3(48.1515, 0.1, 41.3396)
+size = Vector3(40.4095, 9.03821, 9.12649)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1fawl"]
+size = Vector3(6.94212, 9.9753, 8.43289)
 
 [node name="World" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0267534, -0.155748, 0.103453)
@@ -40,6 +43,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
 [node name="Floor" type="CollisionShape3D" parent="KitchenBounds"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3295, 0, -8.4036)
 shape = SubResource("BoxShape3D_l0ed6")
+
+[node name="Counter_Right" type="CollisionShape3D" parent="KitchenBounds"]
+transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, -1, 1, -4.37114e-08, -4.37114e-08, -32.2454, 3.94998, -21.1803)
+shape = SubResource("BoxShape3D_l0ed6")
+
+[node name="Counter_Ctr_Right" type="CollisionShape3D" parent="KitchenBounds"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -17.2204, 3.94998, -25.3663)
+shape = SubResource("BoxShape3D_l0ed6")
+
+[node name="Counter_Ctr_Left" type="CollisionShape3D" parent="KitchenBounds"]
+transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, -1, 1, -4.37114e-08, -4.37114e-08, 7.52641, 3.60294, -41.2354)
+shape = SubResource("BoxShape3D_l0ed6")
+
+[node name="Counter_Left" type="CollisionShape3D" parent="KitchenBounds"]
+transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, -1, 1, -4.37114e-08, -4.37114e-08, 8.54179, 3.60294, -18.2978)
+shape = SubResource("BoxShape3D_l0ed6")
+
+[node name="Dishwasher_Top" type="CollisionShape3D" parent="KitchenBounds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.88686, 1.94961, -2.39601)
+shape = SubResource("BoxShape3D_1fawl")
+
+[node name="Dishwasher_Bot" type="CollisionShape3D" parent="KitchenBounds"]
+transform = Transform3D(0.999245, -0.0388587, 0, 0.0388587, 0.999245, 0, 0, 0, 1, 6.8749, 0.747869, -2.39601)
+shape = SubResource("BoxShape3D_1fawl")
 
 [node name="kitchen" parent="." instance=ExtResource("3_a5buy")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 4.11497, -25)
