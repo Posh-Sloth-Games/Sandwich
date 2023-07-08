@@ -1,14 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://7g122hkiaaa7"]
+[gd_scene load_steps=7 format=3 uid="uid://7g122hkiaaa7"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_60bob"]
 [ext_resource type="Script" path="res://SpringArm.gd" id="2_1ebmi"]
-[ext_resource type="PackedScene" path="res://sandwich_character.tscn" id="3_iu5ao"]
+[ext_resource type="Script" path="res://GrabRange.gd" id="2_hb5n5"]
+[ext_resource type="PackedScene" uid="uid://dnd4s2uwvml73" path="res://sandwich_character.tscn" id="3_iu5ao"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lkd0t"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_k7d5k"]
+radius = 2.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ag1t7"]
+size = Vector3(2.03692, 0.842694, 1.92006)
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
 script = ExtResource("1_60bob")
+
+[node name="GrabRange" type="ShapeCast3D" parent="."]
+shape = SubResource("CylinderShape3D_k7d5k")
+target_position = Vector3(0, 1, 1)
+collision_mask = 11
+script = ExtResource("2_hb5n5")
 
 [node name="ModelPivot" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -16,8 +27,8 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 [node name="Model" parent="ModelPivot" instance=ExtResource("3_iu5ao")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CapsuleShape3D_lkd0t")
+transform = Transform3D(1, 0, 0, 0, 0.999017, -0.0443169, 0, 0.0443169, 0.999017, 0.0119611, 0.5278, 0.0201645)
+shape = SubResource("BoxShape3D_ag1t7")
 
 [node name="SpringArm" type="SpringArm3D" parent="."]
 spring_length = 7.0
