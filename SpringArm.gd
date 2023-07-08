@@ -1,8 +1,7 @@
 #Attribution
-#	Template:	Godot Engine (4.1); Character Body Default Script
 #	Tutorial:	GDQuest; 3D Movement in Godot in Only 6 Minutes - https://youtu.be/UpF7wm0186Q; 
 #				CC-By 4.0 - GDQuest and contributors - https://www.gdquest.com/
-#				Note: The tutorial is outdated and needed modifications
+#				Note: The tutorial is outdated as of 4.0 and needed modifications
 
 extends SpringArm3D
 
