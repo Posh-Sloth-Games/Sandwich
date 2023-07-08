@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Player.gd" id="1_60bob"]
 [ext_resource type="Script" path="res://SpringArm.gd" id="2_1ebmi"]
-[ext_resource type="PackedScene" path="res://sandwich_character.tscn" id="3_iu5ao"]
+[ext_resource type="PackedScene" uid="uid://dnd4s2uwvml73" path="res://sandwich_character.tscn" id="3_iu5ao"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lkd0t"]
 
