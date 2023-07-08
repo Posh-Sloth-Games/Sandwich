@@ -18,8 +18,8 @@ var camera_offset := Vector3(0, 2.5, 0)
 @onready var _spring_arm: SpringArm3D = $SpringArm
 @onready var _model: Node3D = $ModelPivot/Model
 @onready var animation= $ModelPivot/Model/AnimationPlayer
+
 func _physics_process(delta):
-	## GDQuest Code ##
 	var move_direction := Vector3.ZERO
 	move_direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 	move_direction.z = Input.get_action_strength("back") - Input.get_action_strength("forward")
@@ -34,13 +34,15 @@ func _physics_process(delta):
 	if is_jumping:
 		velocity.y = jump_strength
 		_snap_vector = Vector3.ZERO
-		animation.play ("Jump")
+		animation.play("Jump")
 	elif just_landed:
+		animation.stop()
 		_snap_vector = Vector3.DOWN
 	
 	move_and_slide()
 	
 	if velocity.length() > 0.2:
+		animation.play("Walk")
 		var look_direction = Vector2(velocity.z, velocity.x)
 		_model.rotation.y = look_direction.angle()
 	
