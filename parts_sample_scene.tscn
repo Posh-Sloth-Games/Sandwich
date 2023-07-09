@@ -1,0 +1,22 @@
+[gd_scene load_steps=7 format=3 uid="uid://cy0pafh3yqevi"]
+
+[ext_resource type="PackedScene" uid="uid://utbm6ayy8jet" path="res://Assets/Head Chef.glb" id="1_1ccc5"]
+[ext_resource type="PackedScene" uid="uid://bd4gs6jn4wk1p" path="res://Assets/lArm.glb" id="2_6r54m"]
+[ext_resource type="PackedScene" uid="uid://xbkv0vujyor7" path="res://Assets/Lleg.glb" id="3_137b0"]
+[ext_resource type="PackedScene" uid="uid://blju0e25ru1rl" path="res://Assets/Rarm.glb" id="4_q4tu2"]
+[ext_resource type="PackedScene" uid="uid://b8xgfnxnfw48o" path="res://Assets/rLeg.glb" id="5_qmpxd"]
+[ext_resource type="PackedScene" uid="uid://byvwmpp8q7wjv" path="res://Assets/torso.glb" id="6_fixnu"]
+
+[node name="Parts_Sample_Scene" type="Node3D"]
+
+[node name="Head Chef" parent="." instance=ExtResource("1_1ccc5")]
+
+[node name="lArm" parent="." instance=ExtResource("2_6r54m")]
+
+[node name="Lleg" parent="." instance=ExtResource("3_137b0")]
+
+[node name="Rarm" parent="." instance=ExtResource("4_q4tu2")]
+
+[node name="rLeg" parent="." instance=ExtResource("5_qmpxd")]
+
+[node name="torso" parent="." instance=ExtResource("6_fixnu")]
