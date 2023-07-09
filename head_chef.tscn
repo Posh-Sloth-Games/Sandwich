@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://qrkno7djel4k"]
+
+[ext_resource type="PackedScene" uid="uid://utbm6ayy8jet" path="res://Assets/Head Chef.glb" id="1_kk404"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v7a55"]
+radius = 0.242967
+height = 2.42967
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sppsg"]
+radius = 0.0652744
+height = 0.652744
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o5glf"]
+radius = 0.0654934
+height = 0.654934
+
+[node name="Head Chef" instance=ExtResource("1_kk404")]
+
+[node name="Physical Bone Bone" type="PhysicalBone3D" parent="Head Chef2/Skeleton3D" index="1"]
+transform = Transform3D(1, 2.38261e-07, 7.09139e-15, -7.08671e-15, 5.95261e-08, -0.999341, -2.38261e-07, 0.999341, 5.95261e-08, -8.60385e-15, 1.21352, -7.23314e-08)
+joint_type = 3
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.87211e-17, 4.77069e-11, 1.21432)
+body_offset = Transform3D(1, 0, 0, 9.36056e-18, -3.9261e-11, -0.999341, 1.57058e-10, 0.999341, -3.9261e-11, 1.87211e-17, 1.21352, 0)
+bone_name = "Bone"
+joint_constraints/angular_limit_enabled = false
+joint_constraints/angular_limit_upper = 90.0
+joint_constraints/angular_limit_lower = -90.0
+joint_constraints/angular_limit_bias = 0.3
+joint_constraints/angular_limit_softness = 0.9
+joint_constraints/angular_limit_relaxation = 1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Head Chef2/Skeleton3D/Physical Bone Bone" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_v7a55")
+
+[node name="Physical Bone Bone_001" type="PhysicalBone3D" parent="Head Chef2/Skeleton3D" index="2"]
+transform = Transform3D(1, 2.52682e-29, 7.10543e-15, 7.09607e-15, 5.95261e-08, -0.999341, -2.84217e-14, 0.999341, 5.95261e-08, -1.95829e-14, 2.75605, -1.64116e-07)
+joint_type = 2
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52866e-18, -1.44331e-10, 0.326587)
+body_offset = Transform3D(1, -2.78941e-25, 4.6807e-18, -9.36141e-18, -3.9261e-11, -0.999341, 0, 0.999341, -3.9261e-11, 0, 0.326372, 1.57058e-10)
+bone_name = "Bone.001"
+joint_constraints/swing_span = 45.0
+joint_constraints/twist_span = 180.0
+joint_constraints/bias = 0.3
+joint_constraints/softness = 0.8
+joint_constraints/relaxation = 1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Head Chef2/Skeleton3D/Physical Bone Bone_001" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_sppsg")
+
+[node name="Physical Bone Bone_002" type="PhysicalBone3D" parent="Head Chef2/Skeleton3D" index="3"]
+transform = Transform3D(1, 2.38419e-07, 7.09139e-15, -7.10543e-15, 5.95261e-08, -0.999341, -2.38419e-07, 0.999341, 5.95261e-08, -2.42287e-14, 3.40989, -2.03245e-07)
+joint_type = 4
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.33541e-22, 1.28737e-11, 0.327683)
+body_offset = Transform3D(1, 1.57058e-10, 2.5411e-21, 0, -3.9261e-11, -0.999341, 0, 0.999341, -3.9261e-11, -3.38813e-21, 0.327467, 0)
+bone_name = "Bone.002"
+joint_constraints/linear_limit_upper = 1.0
+joint_constraints/linear_limit_lower = -1.0
+joint_constraints/linear_limit_softness = 1.0
+joint_constraints/linear_limit_restitution = 0.7
+joint_constraints/linear_limit_damping = 1.0
+joint_constraints/angular_limit_upper = 0.0
+joint_constraints/angular_limit_lower = 0.0
+joint_constraints/angular_limit_softness = 1.0
+joint_constraints/angular_limit_restitution = 0.7
+joint_constraints/angular_limit_damping = 1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Head Chef2/Skeleton3D/Physical Bone Bone_002" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_o5glf")
