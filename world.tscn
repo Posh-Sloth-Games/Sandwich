@@ -988,21 +988,6 @@ skeleton = NodePath("")
 transform = Transform3D(1, 5.96046e-08, 1.49012e-07, -1.49012e-07, 1, -9.98378e-07, 1.19209e-07, 5.96046e-08, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_isiud")
 
-[node name="lArm_Ragdoll_Snap2" type="RigidBody3D" parent="Level Objects"]
-transform = Transform3D(-0.649346, 0.499836, -0.573161, -0.0483998, -0.779304, -0.624773, -0.758952, -0.377953, 0.53023, -8.27458, 6.15814, -3.40778)
-collision_layer = 8
-collision_mask = 11
-
-[node name="Left Arm" type="MeshInstance3D" parent="Level Objects/lArm_Ragdoll_Snap2"]
-transform = Transform3D(1, 5.96046e-08, 1.49012e-07, -1.49012e-07, 1, -9.98378e-07, 1.19209e-07, 5.96046e-08, 1, 0, 0, 0)
-mesh = SubResource("ArrayMesh_tyt2l")
-skin = SubResource("Skin_y5djs")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Level Objects/lArm_Ragdoll_Snap2"]
-transform = Transform3D(1, 5.96046e-08, 1.49012e-07, -1.49012e-07, 1, -9.98378e-07, 1.19209e-07, 5.96046e-08, 1, 0, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_isiud")
-
 [node name="Rarm_Ragdoll_Snap" type="RigidBody3D" parent="Level Objects"]
 transform = Transform3D(0.329731, -0.796041, 0.507538, 0.923879, 0.382684, 4.79884e-07, -0.194227, 0.468904, 0.861629, 6.02363, 8.28019, -25.719)
 collision_layer = 8
