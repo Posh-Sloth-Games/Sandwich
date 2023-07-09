@@ -643,36 +643,34 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1.4, 0, 0, 0, 1, -26.3361, -0.205747, 24.3719)
 shape = SubResource("ConvexPolygonShape3D_pbyxi")
 
-[node name="Table_Ragdoll" type="RigidBody3D" parent="Level Objects"]
+[node name="Table" type="RigidBody3D" parent="Level Objects"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7216, -0.05, -0.636378)
-collision_layer = 16
-collision_mask = 11
 
-[node name="Cube" type="MeshInstance3D" parent="Level Objects/Table_Ragdoll"]
+[node name="Cube" type="MeshInstance3D" parent="Level Objects/Table"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.47, 0, 0, 0)
 mesh = SubResource("ArrayMesh_ys4se")
 skeleton = NodePath("")
 
-[node name="_CollisionShape3D_73667" type="CollisionShape3D" parent="Level Objects/Table_Ragdoll"]
+[node name="_CollisionShape3D_73667" type="CollisionShape3D" parent="Level Objects/Table"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.47, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_ndr4h")
 
-[node name="_CollisionShape3D_73666" type="CollisionShape3D" parent="Level Objects/Table_Ragdoll"]
+[node name="_CollisionShape3D_73666" type="CollisionShape3D" parent="Level Objects/Table"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.47, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_nicgg")
 
-[node name="_CollisionShape3D_73665" type="CollisionShape3D" parent="Level Objects/Table_Ragdoll"]
+[node name="_CollisionShape3D_73665" type="CollisionShape3D" parent="Level Objects/Table"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.47, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_1v0kg")
 
-[node name="_CollisionShape3D_73664" type="CollisionShape3D" parent="Level Objects/Table_Ragdoll"]
+[node name="_CollisionShape3D_73664" type="CollisionShape3D" parent="Level Objects/Table"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.47, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_lf3q6")
 
-[node name="_CollisionShape3D_73663" type="CollisionShape3D" parent="Level Objects/Table_Ragdoll"]
+[node name="_CollisionShape3D_73663" type="CollisionShape3D" parent="Level Objects/Table"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.47, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_f2bmq")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level Objects/Table_Ragdoll"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level Objects/Table"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.47, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_gkn1x")
