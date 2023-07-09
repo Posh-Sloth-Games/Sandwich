@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://crqbj0ownxyrb" path="res://music and fx/sandwich shuffle V3.mp3" id="5_knp2n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4fe6k"]
-size = Vector3(3.5, 2.5, 4)
+size = Vector3(3.5, 2, 4)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nup6t"]
 transparency = 1
