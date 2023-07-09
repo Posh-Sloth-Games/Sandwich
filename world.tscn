@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://bj6en0rifvn3w"]
+[gd_scene load_steps=83 format=3 uid="uid://bj6en0rifvn3w"]
 
 [ext_resource type="PackedScene" uid="uid://7g122hkiaaa7" path="res://player.tscn" id="1_17os3"]
 [ext_resource type="PackedScene" uid="uid://bkudgbxm6erfe" path="res://ragdoll.tscn" id="2_tdxuf"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" path="res://DanceChef.tscn" id="4_t38kr"]
 [ext_resource type="AudioStream" uid="uid://3xan8aahltlv" path="res://music and fx/gameplay music.mp3" id="6_0el6s"]
 [ext_resource type="PackedScene" uid="uid://cwmjm12r13pyi" path="res://Template_Scenes/rigid_body_3d_template.tscn" id="6_sunj8"]
+[ext_resource type="Texture2D" uid="uid://ch0emhnsu1wkc" path="res://Table.png" id="7_tv20q"]
 [ext_resource type="Texture2D" uid="uid://dasvg8etcju1i" path="res://Assets/torso_chef.png" id="8_l24hp"]
 [ext_resource type="Texture2D" uid="uid://bycon16f7f3xb" path="res://Assets/lArm_chef.png" id="9_to5xy"]
 [ext_resource type="Texture2D" uid="uid://bl2elksse4s8u" path="res://Assets/Rarm_chef.png" id="10_shvji"]
@@ -234,6 +235,7 @@ points = PackedVector3Array(-4.67431, -7.83203, -1.73429, 4.98324, -8.4592, 0.17
 resource_name = "Material.001"
 cull_mode = 2
 vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("7_tv20q")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_nml30"]
@@ -275,6 +277,7 @@ points = PackedVector3Array(0.394715, 3.58789, 1.54137, -0.393446, 3.58789, 1.54
 resource_name = "Material"
 cull_mode = 2
 vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("7_tv20q")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_qfaid"]
