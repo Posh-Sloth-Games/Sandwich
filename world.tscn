@@ -1,9 +1,9 @@
-[gd_scene load_steps=83 format=3 uid="uid://bj6en0rifvn3w"]
+[gd_scene load_steps=82 format=3 uid="uid://bj6en0rifvn3w"]
 
 [ext_resource type="PackedScene" uid="uid://7g122hkiaaa7" path="res://player.tscn" id="1_17os3"]
 [ext_resource type="PackedScene" uid="uid://bkudgbxm6erfe" path="res://ragdoll.tscn" id="2_tdxuf"]
 [ext_resource type="PackedScene" uid="uid://doc77bh45ky2m" path="res://kitchen.glb" id="3_a5buy"]
-[ext_resource type="PackedScene" uid="uid://cnjfw7fv6d70b" path="res://DanceChef.tscn" id="4_t38kr"]
+[ext_resource type="PackedScene" path="res://DanceChef.tscn" id="4_t38kr"]
 [ext_resource type="AudioStream" uid="uid://3xan8aahltlv" path="res://music and fx/gameplay music.mp3" id="6_0el6s"]
 [ext_resource type="PackedScene" uid="uid://cwmjm12r13pyi" path="res://Template_Scenes/rigid_body_3d_template.tscn" id="6_sunj8"]
 [ext_resource type="Texture2D" uid="uid://dasvg8etcju1i" path="res://Assets/torso_chef.png" id="8_l24hp"]
@@ -49,9 +49,6 @@ size = Vector3(44.8385, 6.02289, 9.19266)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s0bg0"]
 size = Vector3(48.2702, 1, 46.944)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_qrdit"]
-size = Vector3(1, 42.6797, 100)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3lrbm"]
 resource_name = "Material.003"
@@ -601,9 +598,7 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 [node name="Player" parent="." instance=ExtResource("1_17os3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5743, 5.46679, -8.96359)
 collision_mask = 17
-speed = null
 jump_strength = 21.0
-gravity = null
 
 [node name="KitchenBounds" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
@@ -714,24 +709,6 @@ shape = SubResource("BoxShape3D_s0bg0")
 [node name="Oven" type="CollisionShape3D" parent="KitchenBounds2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.437159, 0, -23.121)
 shape = SubResource("BoxShape3D_gvn0d")
-
-[node name="WallBounds" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WallBounds"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5609, 5.96771, 0)
-shape = SubResource("BoxShape3D_qrdit")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="WallBounds"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.7108, 5.96771, 0)
-shape = SubResource("BoxShape3D_qrdit")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="WallBounds"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.5609, 5.96771, -29.8454)
-shape = SubResource("BoxShape3D_qrdit")
-
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="WallBounds"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -36.7108, 5.96771, 41.2606)
-shape = SubResource("BoxShape3D_qrdit")
 
 [node name="kitchen" parent="." instance=ExtResource("3_a5buy")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 4.11497, -25)
@@ -873,7 +850,7 @@ shape = SubResource("ConvexPolygonShape3D_3mmtx")
 
 [node name="gameplay music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_0el6s")
-volume_db = -6.0
+volume_db = -5.0
 autoplay = true
 
 [node name="Level Objects" type="Node" parent="."]
