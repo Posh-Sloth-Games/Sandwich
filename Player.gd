@@ -55,6 +55,7 @@ func _physics_process(delta):
 	
 
 func _process(_delta):
+	_spring_arm.position = position + camera_offset
 	if(Input.is_action_pressed("back") or Input.is_action_pressed("forward") or 
 	Input.is_action_pressed("left") or Input.is_action_pressed("right")):
 		if (is_on_floor()):

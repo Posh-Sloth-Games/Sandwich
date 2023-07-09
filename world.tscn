@@ -599,7 +599,7 @@ environment = SubResource("Environment_scr7t")
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_17os3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5743, 5.46679, -8.96359)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5743, 9.22806, -6.39174)
 collision_mask = 17
 jump_strength = 21.0
 
