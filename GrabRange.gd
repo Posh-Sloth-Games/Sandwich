@@ -32,6 +32,11 @@ func GrabFirstObject():
 			heldObject.reparent(self)
 			holding = true
 			pass
+		if body.collider.name.contains("Door"):
+			heldObject = body.collider
+			print(heldObject.name)
+			heldObject.apply_impulse(Vector3.MODEL_REAR * 10)
+			pass
 
 func ReleaseHeldObject():
 	heldObject.top_level = true
