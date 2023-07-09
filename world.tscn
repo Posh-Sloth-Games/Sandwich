@@ -547,9 +547,10 @@ albedo_texture = ExtResource("12_ftnqt")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_kxivl"]
 material = SubResource("StandardMaterial3D_p0abu")
+size = Vector2(3.5, 3.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_73eea"]
-size = Vector3(1, 0.1, 1)
+size = Vector3(3.5, 0.5, 3.5)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_rrvhg"]
 height = 4.0
@@ -1032,24 +1033,30 @@ shape = SubResource("ConvexPolygonShape3D_5mh8p")
 transform = Transform3D(-0.950786, 0, -0.309847, 0, 1, 0, 0.309847, 0, -0.950786, -9.37086, 5.5299, -3.4963)
 collision_layer = 8
 collision_mask = 11
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Level Objects/Recipe"]
 mesh = SubResource("PlaneMesh_kxivl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level Objects/Recipe"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0.125, 0)
 shape = SubResource("BoxShape3D_73eea")
 
-[node name="Controls" type="RigidBody3D" parent="Level Objects"]
-transform = Transform3D(0.80799, 0, 0.589196, 0, 1, 0, -0.589196, 0, 0.80799, 0.622146, 11.0598, -3.0756)
+[node name="Recipe2" type="RigidBody3D" parent="Level Objects"]
+transform = Transform3D(-0.950786, 0, -0.309847, 0, 1, 0, 0.309847, 0, -0.950786, -1.46257, 5.5299, -1.49171)
 collision_layer = 8
 collision_mask = 11
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Level Objects/Controls"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level Objects/Recipe2"]
 mesh = SubResource("PlaneMesh_kxivl")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level Objects/Controls"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level Objects/Recipe2"]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0.125, 0)
 shape = SubResource("BoxShape3D_73eea")
 
 [node name="mynamechef" parent="." instance=ExtResource("4_t38kr")]
