@@ -1,8 +1,10 @@
 extends ShapeCast3D
 
 var holding := false
-var heldObject : RigidBody3D
+var heldObject : PhysicsBody3D
 @export var attach: AudioStream
+@export var player: CharacterBody3D
+@export var pivot: Node3D
 @onready var sound= $AudioStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
@@ -47,16 +49,28 @@ func GrabFirstObject():
 		heldObject.top_level = false
 		heldObject.linear_velocity = Vector3.ZERO
 		heldObject.angular_velocity = Vector3.ZERO
-		heldObject.sleeping = true
+		#heldObject.sleeping = true
+		heldObject.axis_lock_linear_x = true
+		heldObject.axis_lock_linear_y = true
+		heldObject.axis_lock_linear_z = true
+		heldObject.axis_lock_angular_x = true
+		heldObject.axis_lock_angular_y = true
+		heldObject.axis_lock_angular_z = true
 		print(heldObject.name)
-		heldObject.reparent(self)
+		heldObject.reparent(pivot)
 		holding = true
 		return
 
 
 func ReleaseHeldObject():
 	heldObject.top_level = true
-	heldObject.sleeping = false
-	heldObject.apply_impulse(self.get_parent().velocity)
+	heldObject.axis_lock_linear_x = false
+	heldObject.axis_lock_linear_y = false
+	heldObject.axis_lock_linear_z = false
+	heldObject.axis_lock_angular_x = false
+	heldObject.axis_lock_angular_y = false
+	heldObject.axis_lock_angular_z = false
+	#heldObject.sleeping = false
+	heldObject.apply_impulse(player.velocity)
 	heldObject = RigidBody3D.new()
 	holding = false
