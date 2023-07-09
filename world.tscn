@@ -4,8 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bkudgbxm6erfe" path="res://ragdoll.tscn" id="2_tdxuf"]
 [ext_resource type="PackedScene" uid="uid://doc77bh45ky2m" path="res://kitchen.glb" id="3_a5buy"]
 [ext_resource type="PackedScene" uid="uid://cnjfw7fv6d70b" path="res://DanceChef.tscn" id="4_t38kr"]
-[ext_resource type="PackedScene" uid="uid://1yfxcwmioybb" path="res://fridge.tscn" id="5_d82ux"]
-[ext_resource type="AudioStream" uid="uid://3xan8aahltlv" path="res://music and fx/gameplay music.mp3" id="6_m8k34"]
+[ext_resource type="PackedScene" uid="uid://cwmjm12r13pyi" path="res://Template_Scenes/rigid_body_3d_template.tscn" id="6_sunj8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kocjt"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
