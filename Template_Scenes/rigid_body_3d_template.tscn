@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cwmjm12r13pyi"]
 
 [node name="RigidBody3D_Template" type="RigidBody3D"]
+collision_layer = 8
+collision_mask = 11
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 
