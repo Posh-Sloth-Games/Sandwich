@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://bj6en0rifvn3w"]
+[gd_scene load_steps=88 format=3 uid="uid://bj6en0rifvn3w"]
 
 [ext_resource type="PackedScene" uid="uid://7g122hkiaaa7" path="res://player.tscn" id="1_17os3"]
 [ext_resource type="PackedScene" uid="uid://bkudgbxm6erfe" path="res://ragdoll.tscn" id="2_tdxuf"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dm21bui57832" path="res://Assets/rLeg_chef.png" id="12_tfpra"]
 [ext_resource type="Script" path="res://LimbSnapper.gd" id="13_56pol"]
 [ext_resource type="Texture2D" uid="uid://cbtyyweesenyo" path="res://Assets/Head Chef_chef.png" id="13_mfx6w"]
+[ext_resource type="PackedScene" uid="uid://b10fcotr3kekx" path="res://congrats.tscn" id="16_byllr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kocjt"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -1062,13 +1063,14 @@ shape = SubResource("BoxShape3D_73eea")
 [node name="mynamechef" parent="." instance=ExtResource("4_t38kr")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -9.40734, 0, -14.5413)
 
-[node name="LimbSnapper" type="ShapeCast3D" parent="." node_paths=PackedStringArray("DanceChef", "HeadSetter", "RArmSetter", "LArmSetter", "RLegSetter", "LLegSetter")]
+[node name="LimbSnapper" type="ShapeCast3D" parent="." node_paths=PackedStringArray("DanceChef", "Congrats", "HeadSetter", "RArmSetter", "LArmSetter", "RLegSetter", "LLegSetter")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5278, 8.22691, 3.05736)
 shape = SubResource("CylinderShape3D_rrvhg")
 target_position = Vector3(0, -0.5, 0)
 collision_mask = 8
 script = ExtResource("13_56pol")
 DanceChef = NodePath("../DanceChef")
+Congrats = NodePath("../Congrats")
 HeadSetter = NodePath("Head")
 RArmSetter = NodePath("RArm")
 LArmSetter = NodePath("LArm")
@@ -1108,3 +1110,5 @@ shape = SubResource("ConcavePolygonShape3D_e4t1r")
 [node name="DanceChef" parent="." instance=ExtResource("4_t38kr")]
 transform = Transform3D(-2.98098, 0, -0.33732, 0, 3, 0, 0.33732, 0, -2.98098, -11.5278, 5.56449, 3.05736)
 visible = false
+
+[node name="Congrats" parent="." instance=ExtResource("16_byllr")]
