@@ -1112,3 +1112,4 @@ transform = Transform3D(-2.98098, 0, -0.33732, 0, 3, 0, 0.33732, 0, -2.98098, -1
 visible = false
 
 [node name="Congrats" parent="." instance=ExtResource("16_byllr")]
+visible = false
