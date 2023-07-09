@@ -56,12 +56,21 @@ func _physics_process(delta):
 
 func _process(_delta):
 	_spring_arm.position = position + camera_offset
-	if((Input.is_action_pressed("back") or Input.is_action_pressed("forward") or 
-	Input.is_action_pressed("left") or Input.is_action_pressed("right")) and is_on_floor()):
-		if sound.stream != sandwich_shuffle:
-			sound.stream = sandwich_shuffle
-		if sound.playing == false:
-			sound.playing = true
-	elif sound.stream == sandwich_shuffle && sound.playing == true:
-		sound.playing = false
+	if(Input.is_action_pressed("back") or Input.is_action_pressed("forward") or 
+	Input.is_action_pressed("left") or Input.is_action_pressed("right")):
+		if (is_on_floor()):
+			if sound.stream != sandwich_shuffle:
+				sound.stream = sandwich_shuffle
+			if sound.playing == false:
+				sound.playing = true
+	else:
+		if (animation.current_animation == "Walk" && is_on_floor()):
+			animation.stop()
+		if sound.stream == sandwich_shuffle && sound.playing == true:
+			sound.playing = false
+
+	if(Input.is_action_just_pressed("escape")):
+			get_tree().quit()
 	
+	if(Input.is_action_just_pressed("reset")):
+		get_tree().reload_current_scene()
