@@ -2,6 +2,8 @@ extends ShapeCast3D
 
 var holding := false
 var heldObject : RigidBody3D
+@export var attach: AudioStream
+@onready var sound= $AudioStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,6 +20,9 @@ func GrabShape():
 			ReleaseHeldObject()
 		else:
 			GrabFirstObject()
+		if sound.stream != attach:
+			sound.stream = attach
+		sound.play()
 	
 func GrabFirstObject():
 	force_shapecast_update()

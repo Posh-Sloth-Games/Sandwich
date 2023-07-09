@@ -8,6 +8,8 @@ extends CharacterBody3D
 @export var speed := 7.0
 @export var jump_strength := 20.0
 @export var gravity := 50.0
+@export var sandwich_shuffle: AudioStream 
+@export var jump: AudioStream
 ### THE LINE BELOW IS FROM THE TUTORIAL; MAY BE USEFUL TO REPLACE FOR GRAVITY LATER
 ## Get the gravity from the project settings to be synced with RigidBody nodes.
 # var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -18,6 +20,7 @@ var camera_offset := Vector3(0, 2.5, 0)
 @onready var _spring_arm: SpringArm3D = $SpringArm
 @onready var _model: Node3D = $ModelPivot/Model
 @onready var animation= $ModelPivot/Model/AnimationPlayer
+@onready var sound= $AudioStreamPlayer
 
 func _physics_process(delta):
 	var move_direction := Vector3.ZERO
@@ -35,6 +38,10 @@ func _physics_process(delta):
 		velocity.y = jump_strength
 		_snap_vector = Vector3.ZERO
 		animation.play("Jump")
+		if sound.stream != jump:
+			sound.stream = jump
+		sound.play()
+		
 	elif just_landed:
 		animation.stop()
 		_snap_vector = Vector3.DOWN
@@ -49,3 +56,12 @@ func _physics_process(delta):
 
 func _process(_delta):
 	_spring_arm.position = position + camera_offset
+	if((Input.is_action_pressed("back") or Input.is_action_pressed("forward") or 
+	Input.is_action_pressed("left") or Input.is_action_pressed("right")) and is_on_floor()):
+		if sound.stream != sandwich_shuffle:
+			sound.stream = sandwich_shuffle
+		if sound.playing == false:
+			sound.playing = true
+	elif sound.stream == sandwich_shuffle && sound.playing == true:
+		sound.playing = false
+	
