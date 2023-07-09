@@ -53,6 +53,9 @@ func GrabFirstObject():
 		heldObject.axis_lock_linear_x = true
 		heldObject.axis_lock_linear_y = true
 		heldObject.axis_lock_linear_z = true
+		heldObject.axis_lock_angular_x = true
+		heldObject.axis_lock_angular_y = true
+		heldObject.axis_lock_angular_z = true
 		print(heldObject.name)
 		heldObject.reparent(pivot)
 		holding = true
@@ -64,6 +67,9 @@ func ReleaseHeldObject():
 	heldObject.axis_lock_linear_x = false
 	heldObject.axis_lock_linear_y = false
 	heldObject.axis_lock_linear_z = false
+	heldObject.axis_lock_angular_x = false
+	heldObject.axis_lock_angular_y = false
+	heldObject.axis_lock_angular_z = false
 	#heldObject.sleeping = false
 	heldObject.apply_impulse(player.velocity)
 	heldObject = RigidBody3D.new()
