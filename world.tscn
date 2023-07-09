@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://7g122hkiaaa7" path="res://player.tscn" id="1_17os3"]
 [ext_resource type="PackedScene" uid="uid://bkudgbxm6erfe" path="res://ragdoll.tscn" id="2_tdxuf"]
 [ext_resource type="PackedScene" uid="uid://doc77bh45ky2m" path="res://kitchen.glb" id="3_a5buy"]
-[ext_resource type="PackedScene" uid="uid://cnjfw7fv6d70b" path="res://DanceChef.tscn" id="4_t38kr"]
+[ext_resource type="PackedScene" path="res://DanceChef.tscn" id="4_t38kr"]
 [ext_resource type="AudioStream" uid="uid://3xan8aahltlv" path="res://music and fx/gameplay music.mp3" id="6_0el6s"]
 [ext_resource type="PackedScene" uid="uid://cwmjm12r13pyi" path="res://Template_Scenes/rigid_body_3d_template.tscn" id="6_sunj8"]
 [ext_resource type="Texture2D" uid="uid://ch0emhnsu1wkc" path="res://Table.png" id="7_tv20q"]
