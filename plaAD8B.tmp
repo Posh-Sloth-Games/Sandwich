@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Player.gd" id="1_60bob"]
 [ext_resource type="Script" path="res://SpringArm.gd" id="2_1ebmi"]
+[ext_resource type="PackedScene" uid="uid://e3b3opc134p6" path="res://main_menu.tscn" id="2_5pall"]
 [ext_resource type="Script" path="res://GrabRange.gd" id="2_hb5n5"]
-[ext_resource type="PackedScene" uid="uid://e3b3opc134p6" path="res://main_menu.tscn" id="2_xpbax"]
 [ext_resource type="PackedScene" uid="uid://dnd4s2uwvml73" path="res://sandwich_character.tscn" id="3_iu5ao"]
 [ext_resource type="AudioStream" uid="uid://bfyg2ehusn7it" path="res://music and fx/jump.mp3" id="3_wwtjh"]
 [ext_resource type="AudioStream" uid="uid://2gomkpt3dstd" path="res://music and fx/attach.mp3" id="5_a1h3f"]
@@ -26,7 +26,7 @@ size = Vector3(2.03692, 0.842694, 1.92006)
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
 script = ExtResource("1_60bob")
-menu = ExtResource("2_xpbax")
+menu = ExtResource("2_5pall")
 sandwich_shuffle = ExtResource("5_knp2n")
 jump = ExtResource("3_wwtjh")
 
