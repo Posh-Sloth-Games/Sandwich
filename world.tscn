@@ -1,10 +1,11 @@
-[gd_scene load_steps=30 format=3 uid="uid://bj6en0rifvn3w"]
+[gd_scene load_steps=31 format=3 uid="uid://bj6en0rifvn3w"]
 
 [ext_resource type="PackedScene" uid="uid://7g122hkiaaa7" path="res://player.tscn" id="1_17os3"]
 [ext_resource type="PackedScene" uid="uid://bkudgbxm6erfe" path="res://ragdoll.tscn" id="2_tdxuf"]
 [ext_resource type="PackedScene" uid="uid://doc77bh45ky2m" path="res://kitchen.glb" id="3_a5buy"]
 [ext_resource type="PackedScene" uid="uid://cnjfw7fv6d70b" path="res://DanceChef.tscn" id="4_t38kr"]
 [ext_resource type="PackedScene" uid="uid://1yfxcwmioybb" path="res://fridge.tscn" id="5_d82ux"]
+[ext_resource type="AudioStream" uid="uid://3xan8aahltlv" path="res://music and fx/gameplay music.mp3" id="6_m8k34"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kocjt"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -390,3 +391,8 @@ skeleton = NodePath("")
 
 [node name="fridge2_old" parent="." instance=ExtResource("5_d82ux")]
 transform = Transform3D(-2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, 10.6613, 5.5, 7.05391)
+
+[node name="gameplaymusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_m8k34")
+volume_db = -2.0
+autoplay = true
