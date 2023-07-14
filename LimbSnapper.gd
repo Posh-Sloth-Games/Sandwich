@@ -1,6 +1,7 @@
 extends ShapeCast3D
 
 @export var DanceChef: Node3D
+@export var Congrats: Node2D
 
 @export var HeadSetter: Node3D
 @export var RArmSetter: Node3D
@@ -55,4 +56,5 @@ func CheckWin():
 	if hasHead && hasRArm && hasLArm && hasRLeg && hasLLeg:
 		gameIsWon.emit()
 		DanceChef.visible = true
+		Congrats.visible = true
 		self.visible = false
