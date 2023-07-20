@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://bj6en0rifvn3w"]
+[gd_scene load_steps=88 format=3 uid="uid://bj6en0rifvn3w"]
 
 [ext_resource type="PackedScene" uid="uid://7g122hkiaaa7" path="res://player.tscn" id="1_17os3"]
 [ext_resource type="PackedScene" uid="uid://bkudgbxm6erfe" path="res://ragdoll.tscn" id="2_tdxuf"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dm21bui57832" path="res://Assets/rLeg_chef.png" id="12_tfpra"]
 [ext_resource type="Script" path="res://LimbSnapper.gd" id="13_56pol"]
 [ext_resource type="Texture2D" uid="uid://cbtyyweesenyo" path="res://Assets/Head Chef_chef.png" id="13_mfx6w"]
+[ext_resource type="PackedScene" uid="uid://b10fcotr3kekx" path="res://congrats.tscn" id="16_byllr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kocjt"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -547,9 +548,10 @@ albedo_texture = ExtResource("12_ftnqt")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_kxivl"]
 material = SubResource("StandardMaterial3D_p0abu")
+size = Vector2(3.5, 3.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_73eea"]
-size = Vector3(1, 0.1, 1)
+size = Vector3(3.5, 0.5, 3.5)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_rrvhg"]
 height = 4.0
@@ -1032,36 +1034,43 @@ shape = SubResource("ConvexPolygonShape3D_5mh8p")
 transform = Transform3D(-0.950786, 0, -0.309847, 0, 1, 0, 0.309847, 0, -0.950786, -9.37086, 5.5299, -3.4963)
 collision_layer = 8
 collision_mask = 11
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Level Objects/Recipe"]
 mesh = SubResource("PlaneMesh_kxivl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level Objects/Recipe"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0.125, 0)
 shape = SubResource("BoxShape3D_73eea")
 
-[node name="Controls" type="RigidBody3D" parent="Level Objects"]
-transform = Transform3D(0.80799, 0, 0.589196, 0, 1, 0, -0.589196, 0, 0.80799, 0.622146, 11.0598, -3.0756)
+[node name="Recipe2" type="RigidBody3D" parent="Level Objects"]
+transform = Transform3D(-0.950786, 0, -0.309847, 0, 1, 0, 0.309847, 0, -0.950786, -1.46257, 5.5299, -1.49171)
 collision_layer = 8
 collision_mask = 11
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Level Objects/Controls"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level Objects/Recipe2"]
 mesh = SubResource("PlaneMesh_kxivl")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level Objects/Controls"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level Objects/Recipe2"]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0.125, 0)
 shape = SubResource("BoxShape3D_73eea")
 
 [node name="mynamechef" parent="." instance=ExtResource("4_t38kr")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -9.40734, 0, -14.5413)
 
-[node name="LimbSnapper" type="ShapeCast3D" parent="." node_paths=PackedStringArray("DanceChef", "HeadSetter", "RArmSetter", "LArmSetter", "RLegSetter", "LLegSetter")]
+[node name="LimbSnapper" type="ShapeCast3D" parent="." node_paths=PackedStringArray("DanceChef", "Congrats", "HeadSetter", "RArmSetter", "LArmSetter", "RLegSetter", "LLegSetter")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5278, 8.22691, 3.05736)
 shape = SubResource("CylinderShape3D_rrvhg")
 target_position = Vector3(0, -0.5, 0)
 collision_mask = 8
 script = ExtResource("13_56pol")
 DanceChef = NodePath("../DanceChef")
+Congrats = NodePath("../Congrats")
 HeadSetter = NodePath("Head")
 RArmSetter = NodePath("RArm")
 LArmSetter = NodePath("LArm")
@@ -1100,4 +1109,7 @@ shape = SubResource("ConcavePolygonShape3D_e4t1r")
 
 [node name="DanceChef" parent="." instance=ExtResource("4_t38kr")]
 transform = Transform3D(-2.98098, 0, -0.33732, 0, 3, 0, 0.33732, 0, -2.98098, -11.5278, 5.56449, 3.05736)
+visible = false
+
+[node name="Congrats" parent="." instance=ExtResource("16_byllr")]
 visible = false
