@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxcu4jguxohqv"]
+
+[ext_resource type="Texture2D" uid="uid://cjjoyc1m76xnj" path="res://_Assets/Set Pieces/Kitchen/kitchen_tapeta-winylowa-imitacja-kafelki-do-kuchni-lub-lazienki-delft-ii-nr-6492-32-tapety-as-creation_0_b.png" id="1_56u3w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6cp1x"]
+resource_name = "Material.008"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_56u3w")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3bvhf"]
+_surfaces = [{
+"aabb": AABB(-1.01523, 0, -1.0242, 2.00001, 1e-05, 1.72679),
+"format": 4097,
+"index_count": 6,
+"index_data": PackedByteArray(2, 0, 1, 0, 3, 0, 2, 0, 0, 0, 1, 0),
+"name": "Material.008",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 25, 124, 63, 0, 0, 0, 0, 242, 219, 51, 63, 56, 243, 129, 191, 0, 0, 0, 0, 242, 219, 51, 63, 143, 25, 124, 63, 0, 0, 0, 0, 0, 25, 131, 191, 56, 243, 129, 191, 0, 0, 0, 0, 0, 25, 131, 191)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_frums"]
+resource_name = "kitchen_Plane_001"
+_surfaces = [{
+"aabb": AABB(-1.01523, 0, -1.0242, 2.00001, 1e-05, 1.72679),
+"attribute_data": PackedByteArray(32, 94, 254, 190, 86, 10, 191, 63, 29, 94, 254, 190, 118, 203, 0, 192, 7, 72, 246, 63, 87, 10, 191, 63, 7, 72, 246, 63, 120, 203, 0, 192),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(2, 0, 1, 0, 3, 0, 2, 0, 0, 0, 1, 0),
+"material": SubResource("StandardMaterial3D_6cp1x"),
+"name": "Material.008",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 25, 124, 63, 0, 0, 0, 0, 242, 219, 51, 63, 255, 127, 255, 255, 0, 0, 255, 255, 56, 243, 129, 191, 0, 0, 0, 0, 242, 219, 51, 63, 255, 127, 255, 255, 255, 255, 255, 255, 143, 25, 124, 63, 0, 0, 0, 0, 0, 25, 131, 191, 255, 127, 255, 255, 255, 255, 255, 255, 56, 243, 129, 191, 0, 0, 0, 0, 0, 25, 131, 191, 255, 127, 255, 255, 255, 255, 254, 255)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_3bvhf")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_w47fd"]
+data = PackedVector3Array(0.9848, 0, -1.0242, -1.0152, 0, 0.7026, -1.0152, 0, -1.0242, 0.9848, 0, -1.0242, 0.9848, 0, 0.7026, -1.0152, 0, 0.7026)
+
+[node name="Floor" type="Node3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(6.01211, 0, 0, 0, 6.01211, 0, 0, 0, 6.01211, 0.25825, -1.03604, -2.90492)
+mesh = SubResource("ArrayMesh_frums")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mesh"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mesh/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_w47fd")
+
+[node name="Mesh2" type="MeshInstance3D" parent="."]
+transform = Transform3D(6.01211, 0, 0, 0, 6.01211, 0, 0, 0, 6.01211, 0.258, -1.036, 5.672)
+mesh = SubResource("ArrayMesh_frums")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mesh2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mesh2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_w47fd")

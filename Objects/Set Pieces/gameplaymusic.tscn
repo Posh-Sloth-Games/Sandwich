@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4mjuw4ykm6v2"]
+
+[ext_resource type="AudioStream" uid="uid://c48ssmj4e8bbe" path="res://_Audio/Game/Level_1/gameplay music.mp3" id="1_twafr"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_twafr")
+volume_db = -2.0
+autoplay = true

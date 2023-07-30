@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8k7qaq6s465p"]
+
+[ext_resource type="Texture2D" uid="uid://uoa33ch0ev86" path="res://_Assets/Props/recipe.jpg" id="1_w3dml"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p0abu"]
+albedo_texture = ExtResource("1_w3dml")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_kxivl"]
+material = SubResource("StandardMaterial3D_p0abu")
+size = Vector2(3.5, 3.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_73eea"]
+size = Vector3(3.5, 0.5, 3.5)
+
+[node name="Recipe" type="RigidBody3D"]
+transform = Transform3D(-0.950786, 0, -0.309847, 0, 1, 0, 0.309847, 0, -0.950786, 0, 0, 0)
+collision_layer = 8
+collision_mask = 11
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_kxivl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0.125, 0)
+shape = SubResource("BoxShape3D_73eea")
