@@ -73,4 +73,5 @@ func ReleaseHeldObject():
 	#heldObject.sleeping = false
 	heldObject.apply_impulse(player.velocity)
 	heldObject = RigidBody3D.new()
+	print(heldObject.mass)
 	holding = false

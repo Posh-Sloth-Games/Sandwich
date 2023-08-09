@@ -48,6 +48,7 @@ points = PackedVector3Array(3.30489, 1.16049, 0.0155665, 3.32318, 1.12167, 0.223
 transform = Transform3D(-0.649346, 0.499836, -0.573161, -0.0483998, -0.779304, -0.624773, -0.758952, -0.377953, 0.53023, -30.817, 6.15814, 5.10189)
 collision_layer = 8
 collision_mask = 11
+mass = 10.0
 
 [node name="Left Arm" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 5.96046e-08, 1.49012e-07, -1.49012e-07, 1, -9.98378e-07, 1.19209e-07, 5.96046e-08, 1, 0, 0, 0)
@@ -58,3 +59,5 @@ skeleton = NodePath("")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 5.96046e-08, 1.49012e-07, -1.49012e-07, 1, -9.98378e-07, 1.19209e-07, 5.96046e-08, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_isiud")
+
+[node name="Mass Reference" type="Node3D" parent="."]

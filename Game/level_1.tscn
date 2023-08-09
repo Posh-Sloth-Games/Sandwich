@@ -379,8 +379,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.317, 0, 0.5)
 
 [node name="rLeg_Ragdoll_Snap" parent="Props/Parts" instance=ExtResource("14_nvsij")]
 
-[node name="LimbSnapper" parent="Props/Parts" node_paths=PackedStringArray("Congrats") instance=ExtResource("9_gv1ag")]
+[node name="LimbSnapper" parent="Props/Parts" node_paths=PackedStringArray("DanceChef", "Congrats") instance=ExtResource("9_gv1ag")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.713, 7.89134, 1.71284)
+DanceChef = NodePath("../../../Actors/Table_Chef")
 Congrats = NodePath("../../../Set/_UI/Congrats")
 
 [editable path="Props/Furniture/fridge2"]

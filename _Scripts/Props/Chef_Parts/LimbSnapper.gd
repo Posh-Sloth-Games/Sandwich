@@ -28,10 +28,11 @@ func _process(_delta):
 	CheckWin()
 
 func SetBodyPart():
-	force_shapecast_update()
+	#force_shapecast_update()
 	for Body in collision_result:
 		if (not Body.collider.name.contains("Snap")):
 			continue
+		print("We have contact")
 		Body.collider.top_level = false
 		Body.collider.freeze = true
 		if (Body.collider.name.contains("Head")):
@@ -51,6 +52,7 @@ func SetBodyPart():
 			Body.collider.reparent(LLegSetter)
 		Body.collider.position = Vector3.ZERO
 		Body.collider.rotation = Vector3.ZERO
+		Body.collider.name = "ATTACHED"
 
 func CheckWin():
 	if hasHead && hasRArm && hasLArm && hasRLeg && hasLLeg:
